@@ -23,7 +23,7 @@ old_par<-par(bg="transparent",cex=0.8)
 
 # Make graph
 plot(data$DateTime, data$Global_active_power,type="l",
-     xlab="",ylab="Global Active Power")
+     xlab="",ylab="Global Active Power (kilowatts)")
 
 #Save image
 dev.copy(png, file="plot2.png",width=480,height=480,bg="transparent")

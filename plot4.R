@@ -21,7 +21,7 @@ data<-read_data()
 Sys.setlocale("LC_TIME", "English")
 old_par<-par(bg="transparent",
              mfrow = c(2, 2),
-             cex=0.8)
+             cex.lab=0.8, cex.axis=0.7)
 
 # Make graph
 ## Subplot 1
@@ -44,9 +44,10 @@ legend("topright",col=c("black","red","blue"),
 ## Subplot 4
 plot(data$DateTime, data$Global_reactive_power,type="l",
      xlab="datetime",ylab="Global_reactive_power")
+axis(2,at=seq(0.0,0.5,by=0.1))
 
 #Save image
-dev.copy(png, file="plot4.png",width=480,height=480,bg="transparent")
+dev.copy(png, file="plot4.png",width=480,height=480,bg="transparent") 
 dev.off()
 
 # Back to original parameters
